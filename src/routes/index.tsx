@@ -174,6 +174,7 @@ function Hero() {
             <p className="text-sm font-semibold text-primary-dark sm:text-base">
               <span className="text-accent">Carência de apenas 30 dias</span> — depois disso, atendimento liberado para toda a família.
             </p>
+          </div>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#adquirir"
