@@ -306,7 +306,7 @@ function Pricing() {
     "Até 2 dependentes inclusos (clínico geral)",
     "Prescrição e atestados digitais válidos",
     "Plataforma de telemedicina Porto Seguro",
-    "Sem carência e sem fidelidade",
+    "Carência de apenas 30 dias e sem fidelidade",
     "Cancele quando quiser, direto pelo app",
   ];
 
