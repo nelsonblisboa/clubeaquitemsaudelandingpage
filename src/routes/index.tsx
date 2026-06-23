@@ -169,6 +169,11 @@ function Hero() {
             titular. Quer cobrir toda a família? O <strong className="text-primary-dark">Plano Família</strong> sai por
             apenas <strong className="text-accent">R$ 59,80/mês</strong> (2 titulares + até 2 dependentes).
           </p>
+          <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border-2 border-accent/40 bg-accent/10 px-5 py-3 shadow-accent">
+            <Clock className="h-6 w-6 shrink-0 text-accent" />
+            <p className="text-sm font-semibold text-primary-dark sm:text-base">
+              <span className="text-accent">Carência de apenas 30 dias</span> — depois disso, atendimento liberado para toda a família.
+            </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#adquirir"
