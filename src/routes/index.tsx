@@ -23,7 +23,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import portoAsset from "@/assets/porto-seguro-logo.png.asset.json";
 import horizonAsset from "@/assets/horizon-logo.png.asset.json";
 import heroDoctor from "@/assets/hero-doctor.jpg";
-import familyImg from "@/assets/family.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
