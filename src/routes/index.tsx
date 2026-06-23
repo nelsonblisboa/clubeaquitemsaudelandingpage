@@ -489,8 +489,8 @@ const faqs = [
     a: "Sim. Todas as consultas são realizadas por médicos formados e registrados no CRM, através da plataforma de telemedicina da Porto Seguro.",
   },
   {
-    q: "Tem carência para começar a usar?",
-    a: "Não. Após a confirmação do pagamento, seu acesso é liberado e você já pode agendar consultas imediatamente.",
+    q: "Qual é o prazo de carência?",
+    a: "A carência é de apenas 30 dias a partir da confirmação do pagamento. Após esse período, você e seus dependentes têm acesso liberado a todas as consultas e especialidades.",
   },
   {
     q: "As receitas e atestados são válidos?",
