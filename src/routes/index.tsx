@@ -72,9 +72,9 @@ const benefits = [
     desc: "Clínico geral disponível todos os dias, a qualquer hora — sem fila, sem espera.",
   },
   {
-    icon: Users,
-    title: "Até 2 dependentes grátis",
-    desc: "Inclua dois familiares no plano sem pagar nada a mais pelo clínico geral.",
+    icon: Stethoscope,
+    title: "11 especialidades + clínico",
+    desc: "Pediatria, Cardiologia, Dermatologia, Psiquiatria e muito mais — tudo incluso na assinatura.",
   },
   {
     icon: ShieldCheck,
