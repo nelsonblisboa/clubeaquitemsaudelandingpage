@@ -79,7 +79,7 @@ const benefits = [
   {
     icon: ShieldCheck,
     title: "Carência de apenas 30 dias",
-    desc: "Após 30 dias da assinatura, seu acesso completo está liberado para você cuidar da saúde de toda a família.",
+    desc: "Após 30 dias da assinatura, seu acesso completo está liberado para você cuidar da sua saúde.",
   },
   {
     icon: CreditCard,
