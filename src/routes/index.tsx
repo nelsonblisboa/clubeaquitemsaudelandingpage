@@ -3,7 +3,7 @@ import {
   Stethoscope,
   Video,
   Phone,
-  Users,
+  
   ShieldCheck,
   Clock,
   CreditCard,
@@ -23,7 +23,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import portoAsset from "@/assets/porto-seguro-logo.png.asset.json";
 import horizonAsset from "@/assets/horizon-logo.png.asset.json";
 import heroDoctor from "@/assets/hero-doctor.jpg";
-import familyImg from "@/assets/family.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Telemedicina ilimitada para você e até 2 dependentes. 11 especialidades, atendimento 24h, carência de apenas 30 dias.",
+          "Telemedicina ilimitada para o titular. 11 especialidades, atendimento 24h, carência de apenas 30 dias.",
       },
     ],
   }),
@@ -72,14 +72,14 @@ const benefits = [
     desc: "Clínico geral disponível todos os dias, a qualquer hora — sem fila, sem espera.",
   },
   {
-    icon: Users,
-    title: "Até 2 dependentes grátis",
-    desc: "Inclua dois familiares no plano sem pagar nada a mais pelo clínico geral.",
+    icon: Stethoscope,
+    title: "11 especialidades + clínico",
+    desc: "Pediatria, Cardiologia, Dermatologia, Psiquiatria e muito mais — tudo incluso na assinatura.",
   },
   {
     icon: ShieldCheck,
     title: "Carência de apenas 30 dias",
-    desc: "Após 30 dias da assinatura, seu acesso completo está liberado para você cuidar da saúde de toda a família.",
+    desc: "Após 30 dias da assinatura, seu acesso completo está liberado para você cuidar da sua saúde.",
   },
   {
     icon: CreditCard,
@@ -110,7 +110,7 @@ function LandingPage() {
       <Specialties />
       <Pricing />
       <HowItWorks />
-      <FamilyExample />
+      
       <FAQ />
       <FinalCTA />
       <Footer />
@@ -165,14 +165,13 @@ function Hero() {
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Consultas online ilimitadas com clínico geral e 11 especialidades para o
-            titular. Quer cobrir toda a família? O <strong className="text-primary-dark">Plano Família</strong> sai por
-            apenas <strong className="text-accent">R$ 59,80/mês</strong> (2 titulares + até 2 dependentes).
+            Consultas online ilimitadas com clínico geral e <strong className="text-primary-dark">11 especialidades médicas</strong> para o
+            titular, por apenas <strong className="text-accent">R$ 29,90/mês</strong>. Sem complicação, sem fidelidade.
           </p>
           <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border-2 border-accent/40 bg-accent/10 px-5 py-3 shadow-accent">
             <Clock className="h-6 w-6 shrink-0 text-accent" />
             <p className="text-sm font-semibold text-primary-dark sm:text-base">
-              <span className="text-accent">Carência de apenas 30 dias</span> — depois disso, atendimento liberado para toda a família.
+              <span className="text-accent">Carência de apenas 30 dias</span> — depois disso, acesso liberado a todas as consultas.
             </p>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -216,8 +215,8 @@ function Hero() {
             </div>
           </div>
           <div className="absolute -top-4 right-4 hidden rounded-2xl bg-primary p-4 text-primary-foreground shadow-card md:block">
-            <p className="text-xs opacity-80">Cobertura familiar</p>
-            <p className="text-lg font-bold">Até 4 pessoas</p>
+            <p className="text-xs opacity-80">A partir de</p>
+            <p className="text-lg font-bold">R$ 29,90/mês</p>
           </div>
         </div>
       </div>
@@ -305,88 +304,39 @@ function Specialties() {
 }
 
 function Pricing() {
-  const includes = [
-    "Consultas ilimitadas por vídeo ou telefone",
-    "Clínico geral + 11 especialidades médicas",
-    "Atendimento 24 horas, todos os dias",
-    "Até 2 dependentes inclusos (clínico geral)",
-    "Prescrição e atestados digitais válidos",
-    "Plataforma de telemedicina Porto Seguro",
-    "Carência de apenas 30 dias e sem fidelidade",
-    "Cancele quando quiser, direto pelo app",
-  ];
-
   return (
     <section id="adquirir" className="mx-auto max-w-6xl px-4 py-20">
       <SectionHeader
-        eyebrow="Planos Clube Aqui Tem Saúde"
-        title="Escolha o plano ideal para você"
-        desc="Dois planos simples, com carência de apenas 30 dias e sem fidelidade. Cancele quando quiser."
+        eyebrow="Plano Clube Aqui Tem Saúde"
+        title="Um plano simples, com tudo incluso"
+        desc="Carência de apenas 30 dias, sem fidelidade. Cancele quando quiser."
       />
-      <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2">
-        {/* Plano Individual */}
-        <div className="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card">
-          <div className="border-b border-border p-8">
-            <p className="text-xs font-bold uppercase tracking-widest text-primary">Plano Individual</p>
-            <p className="mt-1 text-sm text-muted-foreground">Apenas para o titular</p>
-            <div className="mt-6 flex items-baseline gap-1 text-primary-dark">
+      <div className="mx-auto mt-12 max-w-md">
+        <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 border-accent bg-gradient-primary text-primary-foreground shadow-card">
+          <span className="absolute right-6 top-6 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-accent">
+            Plano Individual
+          </span>
+          <div className="border-b border-white/15 p-8">
+            <p className="text-xs font-bold uppercase tracking-widest opacity-90">Titular</p>
+            <p className="mt-1 text-sm opacity-80">Acesso completo para você</p>
+            <div className="mt-6 flex items-baseline gap-1">
               <span className="text-2xl font-semibold">R$</span>
               <span className="text-6xl font-bold tracking-tight">29</span>
               <span className="text-3xl font-bold">,90</span>
-              <span className="ml-2 text-sm text-muted-foreground">/mês</span>
+              <span className="ml-2 text-sm opacity-80">/mês</span>
             </div>
-            <p className="mt-1 text-sm font-semibold text-accent">Somente o titular</p>
+            <p className="mt-1 text-sm font-semibold text-accent">Cobrança mensal no cartão</p>
           </div>
           <div className="flex-1 p-8">
             <ul className="space-y-3 text-sm">
               {[
-                "Clínico geral + 11 especialidades",
+                "Clínico geral + 11 especialidades médicas",
                 "Consultas ilimitadas por vídeo ou telefone",
                 "Atendimento 24h, todos os dias",
                 "Prescrição e atestados digitais válidos",
+                "Plataforma de telemedicina Porto Seguro",
                 "Carência de apenas 30 dias",
-              ].map((i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>{i}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="p-8 pt-0">
-            <a
-              href="#"
-              className="inline-flex w-full items-center justify-center rounded-full border-2 border-primary bg-card px-6 py-4 text-base font-bold text-primary transition hover:bg-primary hover:text-primary-foreground"
-            >
-              Adquirir Plano Individual
-            </a>
-          </div>
-        </div>
-
-        {/* Plano Família */}
-        <div className="relative flex flex-col overflow-hidden rounded-3xl border-2 border-accent bg-gradient-primary text-primary-foreground shadow-card">
-          <span className="absolute right-6 top-6 rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground shadow-accent">
-            Mais escolhido
-          </span>
-          <div className="border-b border-white/15 p-8">
-            <p className="text-xs font-bold uppercase tracking-widest opacity-90">Plano Família</p>
-            <p className="mt-1 text-sm opacity-80">2 titulares + até 2 dependentes</p>
-            <div className="mt-6 flex items-baseline gap-1">
-              <span className="text-2xl font-semibold">R$</span>
-              <span className="text-6xl font-bold tracking-tight">59</span>
-              <span className="text-3xl font-bold">,80</span>
-              <span className="ml-2 text-sm opacity-80">/mês</span>
-            </div>
-            <p className="mt-1 text-sm font-semibold text-accent">≈ R$ 14,95 por pessoa</p>
-          </div>
-          <div className="flex-1 p-8">
-            <ul className="space-y-3 text-sm">
-              {[
-                "Tudo do Plano Individual para 2 titulares",
-                "Até 2 dependentes inclusos (clínico geral)",
-                "Cobertura para até 4 pessoas da família",
-                "Atendimento 24h para toda a família",
-                "Carência de apenas 30 dias",
+                "Sem fidelidade — cancele quando quiser",
               ].map((i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
@@ -400,7 +350,7 @@ function Pricing() {
               href="#"
               className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-accent transition hover:brightness-110"
             >
-              Adquirir Plano Família
+              Adquirir o Clube
             </a>
             <p className="mt-3 text-center text-xs opacity-80">Pagamento recorrente no cartão</p>
           </div>
@@ -432,62 +382,6 @@ function HowItWorks() {
   );
 }
 
-function FamilyExample() {
-  return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
-      <div className="grid items-center gap-12 md:grid-cols-2">
-        <div className="relative">
-          <img
-            src={familyImg}
-            alt="Família usando o Clube Aqui Tem Saúde"
-            width={1280}
-            height={960}
-            loading="lazy"
-            className="rounded-3xl shadow-card"
-          />
-          <div className="absolute -bottom-6 right-6 rounded-2xl bg-accent p-5 text-accent-foreground shadow-accent">
-            <p className="text-xs font-semibold uppercase opacity-80">Custo por pessoa</p>
-            <p className="text-3xl font-bold">R$ 14,95</p>
-            <p className="text-xs opacity-80">por mês</p>
-          </div>
-        </div>
-        <div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Exemplo prático</span>
-          <h2 className="mt-3 text-3xl font-bold text-balance text-primary-dark sm:text-4xl">
-            Família completa por menos de R$ 60 por mês
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Com dois titulares, você cobre até 4 pessoas — pai, mãe e dois filhos — com
-            atendimento médico online sempre que precisar.
-          </p>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-border">
-            {[
-              ["Pai — titular", "Clínico + 11 especialidades", "R$ 29,90"],
-              ["Mãe — titular", "Clínico + 11 especialidades", "R$ 29,90"],
-              ["Filho — dependente", "Apenas clínico geral", "Grátis"],
-              ["Filho — dependente", "Apenas clínico geral", "Grátis"],
-            ].map(([who, what, price], i) => (
-              <div
-                key={who}
-                className={`grid grid-cols-[1.2fr_1.4fr_auto] gap-4 px-5 py-3 text-sm ${
-                  i % 2 ? "bg-secondary/40" : "bg-card"
-                }`}
-              >
-                <span className="font-semibold text-primary-dark">{who}</span>
-                <span className="text-muted-foreground">{what}</span>
-                <span className="font-bold text-accent">{price}</span>
-              </div>
-            ))}
-            <div className="flex items-center justify-between bg-primary px-5 py-4 text-primary-foreground">
-              <span className="font-bold">Total para a família</span>
-              <span className="text-xl font-bold">R$ 59,80/mês</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 const faqs = [
   {
@@ -496,7 +390,7 @@ const faqs = [
   },
   {
     q: "Qual é o prazo de carência?",
-    a: "A carência é de apenas 30 dias a partir da confirmação do pagamento. Após esse período, você e seus dependentes têm acesso liberado a todas as consultas e especialidades.",
+    a: "A carência é de apenas 30 dias a partir da confirmação do pagamento. Após esse período, seu acesso é liberado a todas as consultas e especialidades.",
   },
   {
     q: "As receitas e atestados são válidos?",
@@ -507,8 +401,8 @@ const faqs = [
     a: "Sim, sem multa e sem fidelidade. O cancelamento pode ser solicitado quando você quiser.",
   },
   {
-    q: "Como funcionam os dependentes?",
-    a: "Cada titular pode incluir até 2 dependentes gratuitamente. Os dependentes têm acesso a consultas com clínico geral.",
+    q: "Quais especialidades estão incluídas?",
+    a: "Clínica Médica, Pediatria, Geriatria, Psiquiatria, Dermatologia, Medicina da Família, Endocrinologia, Ginecologia, Gastroenterologia, Otorrinolaringologia, Neurologia e Cardiologia.",
   },
   {
     q: "Onde será feita a consulta?",
@@ -554,8 +448,8 @@ function FinalCTA() {
             Comece a cuidar da sua saúde hoje mesmo
           </h2>
           <p className="mx-auto mt-3 max-w-xl opacity-90">
-            <strong>Plano Individual</strong> por R$ 29,90/mês (apenas titular) ou{" "}
-            <strong>Plano Família</strong> por R$ 59,80/mês para até 4 pessoas.
+            Telemedicina ilimitada com clínico geral e 11 especialidades por apenas{" "}
+            <strong className="text-accent">R$ 29,90/mês</strong>.
           </p>
           <a
             href="#adquirir"
