@@ -380,7 +380,7 @@ function Pricing() {
                 "Até 2 dependentes inclusos (clínico geral)",
                 "Cobertura para até 4 pessoas da família",
                 "Atendimento 24h para toda a família",
-                "Sem carência e sem fidelidade",
+                "Carência de apenas 30 dias",
               ].map((i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
