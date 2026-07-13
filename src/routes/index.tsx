@@ -553,6 +553,17 @@ function Footer() {
           <p className="mt-1">
             Serviço de telemedicina operado pela Porto Seguro, em parceria com a Horizon Corretora de Seguros, conforme regulamentação do CFM.
           </p>
+          <p className="mt-3 text-[11px]">
+            Site criado por{" "}
+            <a
+              href="https://instagram.com/soareshuboficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:underline"
+            >
+              @soareshuboficial
+            </a>
+          </p>
         </div>
       </div>
     </footer>
