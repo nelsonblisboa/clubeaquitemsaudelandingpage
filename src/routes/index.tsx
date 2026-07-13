@@ -143,7 +143,7 @@ function Header() {
           <a href="#como-funciona" className="hover:text-primary">Como funciona</a>
           <a href="#faq" className="hover:text-primary">Dúvidas</a>
         </nav>
-        <CheckoutButton className="rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-accent transition hover:brightness-110">
+        <CheckoutButton className="btn-cta rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-accent">
           Adquirir
         </CheckoutButton>
       </div>
