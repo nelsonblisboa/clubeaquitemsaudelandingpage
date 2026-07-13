@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createCheckoutSession } from "@/lib/checkout.functions";
 import {
   Stethoscope,
@@ -108,6 +108,26 @@ const howSteps = [
 ];
 
 function LandingPage() {
+  useEffect(() => {
+    const els = document.querySelectorAll<HTMLElement>(".reveal-up");
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+    );
+    els.forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 40, 320)}ms`;
+      io.observe(el);
+    });
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -143,7 +163,7 @@ function Header() {
           <a href="#como-funciona" className="hover:text-primary">Como funciona</a>
           <a href="#faq" className="hover:text-primary">Dúvidas</a>
         </nav>
-        <CheckoutButton className="rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-accent transition hover:brightness-110">
+        <CheckoutButton className="btn-cta rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-accent">
           Adquirir
         </CheckoutButton>
       </div>
@@ -180,12 +200,9 @@ function Hero() {
             </p>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#adquirir"
-              className="rounded-full bg-gradient-accent px-7 py-4 text-base font-semibold text-accent-foreground shadow-accent transition hover:scale-[1.02] hover:brightness-110"
-            >
+            <CheckoutButton className="btn-cta rounded-full bg-gradient-accent px-7 py-4 text-base font-semibold text-accent-foreground shadow-accent">
               Quero adquirir o Clube
-            </a>
+            </CheckoutButton>
             <a
               href="#como-funciona"
               className="rounded-full border border-primary/20 bg-card px-7 py-4 text-base font-semibold text-primary shadow-soft transition hover:bg-secondary"
@@ -210,7 +227,7 @@ function Hero() {
             height={1024}
             className="rounded-3xl shadow-card"
           />
-          <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-card p-4 shadow-card sm:flex sm:items-center sm:gap-3">
+          <div className="float-soft absolute -bottom-6 -left-6 hidden rounded-2xl bg-card p-4 shadow-card sm:flex sm:items-center sm:gap-3">
             <div className="rounded-xl bg-accent/10 p-2.5">
               <Stethoscope className="h-6 w-6 text-accent" />
             </div>
@@ -219,7 +236,7 @@ function Hero() {
               <p className="text-lg font-bold text-primary-dark">Ilimitadas</p>
             </div>
           </div>
-          <div className="absolute -top-4 right-4 hidden rounded-2xl bg-primary p-4 text-primary-foreground shadow-card md:block">
+          <div className="float-slow absolute -top-4 right-4 hidden rounded-2xl bg-primary p-4 text-primary-foreground shadow-card md:block">
             <p className="text-xs opacity-80">A partir de</p>
             <p className="text-lg font-bold">R$ 29,90/mês</p>
           </div>
@@ -267,9 +284,9 @@ function Benefits() {
         {benefits.map((b) => (
           <div
             key={b.title}
-            className="group rounded-2xl border border-border bg-card p-6 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+            className="reveal-up lift group rounded-2xl border border-border bg-card p-6 shadow-soft"
           >
-            <div className="inline-flex rounded-xl bg-primary/10 p-3 text-primary transition group-hover:bg-accent/10 group-hover:text-accent">
+            <div className="icon-pop inline-flex rounded-xl bg-primary/10 p-3 text-primary transition group-hover:bg-accent/10 group-hover:text-accent">
               <b.icon className="h-6 w-6" />
             </div>
             <h3 className="mt-4 text-lg font-semibold text-primary-dark">{b.title}</h3>
@@ -294,9 +311,9 @@ function Specialties() {
           {specialties.map((s) => (
             <div
               key={s.name}
-              className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 shadow-soft transition hover:border-accent/40 hover:shadow-card"
+              className="reveal-up lift flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 shadow-soft hover:border-accent/40"
             >
-              <div className="rounded-lg bg-accent/10 p-2 text-accent">
+              <div className="icon-pop rounded-lg bg-accent/10 p-2 text-accent">
                 <s.icon className="h-5 w-5" />
               </div>
               <span className="text-sm font-semibold text-primary-dark">{s.name}</span>
@@ -401,7 +418,7 @@ function Pricing() {
             </ul>
           </div>
           <div className="p-8 pt-0">
-            <CheckoutButton className="inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-accent transition hover:brightness-110">
+            <CheckoutButton className="btn-cta inline-flex w-full items-center justify-center rounded-full bg-accent px-6 py-4 text-base font-bold text-accent-foreground shadow-accent">
               Adquirir o Clube
             </CheckoutButton>
             <p className="mt-3 text-center text-xs opacity-80">Pagamento recorrente no cartão</p>
@@ -503,7 +520,7 @@ function FinalCTA() {
             Telemedicina ilimitada com clínico geral e 11 especialidades por apenas{" "}
             <strong className="text-accent">R$ 29,90/mês</strong>.
           </p>
-          <CheckoutButton className="mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-bold text-accent-foreground shadow-glow transition hover:scale-[1.02] hover:brightness-110">
+          <CheckoutButton className="btn-cta mt-8 inline-flex items-center justify-center rounded-full bg-accent px-8 py-4 text-base font-bold text-accent-foreground shadow-glow">
             Adquirir o Clube agora
           </CheckoutButton>
         </div>
