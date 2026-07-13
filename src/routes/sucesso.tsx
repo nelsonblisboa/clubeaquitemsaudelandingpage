@@ -120,6 +120,23 @@ function SucessoPage() {
           </Link>
         </div>
       </main>
+
+      <footer className="border-t bg-card">
+        <div className="mx-auto max-w-3xl px-4 py-6 text-center text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} Clube Aqui Tem Saúde</p>
+          <p className="mt-2 text-[11px]">
+            Site criado por{" "}
+            <a
+              href="https://instagram.com/soareshuboficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-accent hover:underline"
+            >
+              @soareshuboficial
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
