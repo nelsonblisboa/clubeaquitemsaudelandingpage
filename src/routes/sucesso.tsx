@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, Phone, Calendar, HeartPulse, Clock, Gift } from "lucide-react";
-import logoAsset from "@/assets/logo.png.asset.json";
+import logoAsset from "@/assets/logo.png";
 
 export const Route = createFileRoute("/sucesso")({
   head: () => ({
@@ -20,7 +20,7 @@ function SucessoPage() {
       <header className="border-b bg-background/80 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
+            <img src={logoAsset} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
             <span className="font-bold text-primary hidden sm:inline">Clube Aqui Tem Saúde</span>
           </Link>
         </div>

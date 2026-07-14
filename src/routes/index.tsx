@@ -26,9 +26,9 @@ import {
   Tag,
 } from "lucide-react";
 
-import logoAsset from "@/assets/logo.png.asset.json";
-import portoAsset from "@/assets/porto-seguro-logo.png.asset.json";
-import horizonAsset from "@/assets/horizon-logo.png.asset.json";
+import logoAsset from "@/assets/logo.png";
+import portoAsset from "@/assets/porto-seguro-logo.png";
+import horizonAsset from "@/assets/horizon-logo.png";
 import heroDoctor from "@/assets/hero-doctor.jpg";
 
 
@@ -151,7 +151,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="#top" className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
+          <img src={logoAsset} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
           <span className="hidden text-sm font-bold leading-tight text-primary sm:flex sm:flex-col">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Clube</span>
             <span>Aqui Tem <span className="text-accent">Saúde</span></span>
@@ -254,8 +254,8 @@ function PartnersBar() {
           Em parceria com
         </p>
         <div className="flex items-center gap-10">
-          <img src={portoAsset.url} alt="Porto Seguro" className="h-10 w-auto opacity-90" loading="lazy" />
-          <img src={horizonAsset.url} alt="Horizon Corretora de Seguros" className="h-10 w-auto opacity-90" loading="lazy" />
+          <img src={portoAsset} alt="Porto Seguro" className="h-10 w-auto opacity-90" loading="lazy" />
+          <img src={horizonAsset} alt="Horizon Corretora de Seguros" className="h-10 w-auto opacity-90" loading="lazy" />
         </div>
       </div>
     </section>
@@ -535,15 +535,15 @@ function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-wrap items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
+            <img src={logoAsset} alt="Clube Aqui Tem Saúde" className="h-10 w-auto" />
             <div>
               <p className="font-bold text-primary-dark">Clube Aqui Tem Saúde</p>
               <p className="text-xs text-muted-foreground">Telemedicina por assinatura</p>
             </div>
           </div>
           <div className="flex items-center gap-6">
-            <img src={portoAsset.url} alt="Porto Seguro" className="h-8 w-auto opacity-80" loading="lazy" />
-            <img src={horizonAsset.url} alt="Horizon Corretora" className="h-8 w-auto opacity-80" loading="lazy" />
+            <img src={portoAsset} alt="Porto Seguro" className="h-8 w-auto opacity-80" loading="lazy" />
+            <img src={horizonAsset} alt="Horizon Corretora" className="h-8 w-auto opacity-80" loading="lazy" />
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-muted-foreground">
